@@ -4,12 +4,16 @@
 // @name:en     No picture
 // @description 隐藏网站内的图片
 // @description:en Hide picture
-// @version     0.0.2
+// @version     0.0.4
 // @author      l.lyndon
 // @match       *://*.zhihu.com/*
 // @match       *://*.douban.com/*
+// @match       *://*.sina.com.cn/*
+// @match       *://*.163.com/*
+// @match       *://*.sohu.com/*
+// @match       *://*.qq.com/*
 // @match       *://*.msn.cn/*
-// @icon        data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAHAAcAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAGwAAAgMAAwAAAAAAAAAAAAAABgcABQgCAwT/xAA2EAABAwMBBAcHAgcAAAAAAAABAgMEAAURBgcSITETIkFRYXGRFDJCgZKhsRXBIzM2U2Jygv/EABkBAAIDAQAAAAAAAAAAAAAAAAIGAwQFAf/EACkRAAEEAQIFAgcAAAAAAAAAAAEAAgMRBAUxEhMhUWFBoQYigZGx0fD/2gAMAwEAAhEDEQA/ANjS5DEWM5JkupaZaSVLWo4CQO2k5qzaRdZ0lbVmcMGGk4SsJHSrHeSfd8hVvtuvygWNPx14BAek4PPj1U/bPpStJAIBI48vGonu9AlHW9Vk5hghNAbkd0QRda6pjL3kXqQvwdCVj7iiiybVprRSi7wGpCO1xg7ivpPA/alvQ7qzUL9ouFshRozby5roSStRASneA4Y7eNcZxONBZWJm5geGxPN+TY91q3Tup7LfkZt8xKnQMqZX1XE/8n8jNXFZfaccZeS404ptxBylaTgg94I5U3tlmtHrqv8AR7s4FzEpyw8eBdA5g/5Dn4iia++hTFpuuDIcIphTjsfQ/pLTWM43LVNymFRIW+pKP9U9UfYUvdbaan3SS1crZcHG5UcDo2VL3UgjtSfhV+aLnc9Kve97eOfPNcaBjyx3EEptyZGTGUbm/dAdk1w9Ef8A03VEZyNIRwL+5j6k/uOFdlscOqNcpujTajbLWkoZWocFud4+Zz5AV7tqEeIvSj8h9pBeaUgMrI6ySVcgfLPCpsq/o9rl/Pd/NWSW8syNFHZaBdEMd2RG2ifl8ddyEVVY6WdeZ1LbXI+elEpvdx25UBj0qupm7JNHv+1N6guTSm20DMRtQwVE/GR2Du9aqtFlU8DGkyJ2tZ3+3lCe0OzuWbVUtooKWH1l5hWOBSo5I+RyKHq0lqCx22+wvZLlHDqAcoUDhSD3pPZQQ9slgF0lq8SkN591TaVH14fiiLDfRa+doM/NLoRbT9KSauluhXSMI0+Ol9oKC91RI4jkeFWuk9Ly5iEwLBbD0CD8A3W0Z55UeH705bTs103CUFvtvzlj++vq/SMD1ovjMMRmUsx2W2WkjCUISEgfIUQYaonopcX4fmcKnfTew/q/KBtGbOIVsUiZd1InSxgpbx/CbPkfePieHhR7UqUYAGyZcbFixmcEQoL/2Q==
+// @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFEUExURU7Bj03Bj07BjU7Bjk3BkAAAAEzAkU/BjU3AkEzAklW/gUfBmU7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk3BkE7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bj07Bjk7Bjk7Bjk7Bjk7Bjk3AkU3BkE7Bjk7Bjk7BjkzAkk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Cjk7Bjk7Bjk3Bj07Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Bjk7Cjk7Cj0uziEWYfk2+jU27jEy4ik7Dj0SVfDtra0KKeDlkaEehgU/Ej0GFdkGEdkqxhz97cjdYZD9/c0aegDpoakmphE7AjTljaDVOYEKJeEilgzVQYUadfzROYEiohEuzif///yNHXZ4AAABJdFJOUwAAAAAAAAAAAAAAAC2IpoxZIwJF1vfZmUMIKtfyrT0BBZrpYgE46OeHssfY7Kz63Tr13ErR/LUzff3+0GsQFqjIbBkRYJicehIMk0NaAAAAAWJLR0RrUmWlmAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+cIFgcFEOcYMLwAAADVSURBVAjXHY2HVsJgDIVvG35wr7rABS4QJwqKW5FhqKIFGSoWEHC9/wOYvzk5uflychPAMEdGx8YnJqcI5FPwkzXNzDOzc/NBAkChBdZRtBeXllcI4Yj0kg+PJV5dW8fGJj892+yUKyXmqIUY80u1xvXGq2zxFuLMb+/ND7fVtoW3sSPejvvZ7XlXd7Gnpd7/+nZE9w+Q0OzUflzhw6MAkt7z38ZfMXV8YhpIn3pG++z84pJ8Bq6u9SBxc5sxQQMKdJfN5QvWPdGgoZQw0dCwFL8mpf4Bqastmak5j04AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDgtMjJUMDc6MDQ6NTArMDA6MDBTocvVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA4LTIyVDA3OjAyOjA3KzAwOjAwoqUzxAAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wOC0yMlQwNzowNToxNiswMDowMH2xAkgAAAAgdEVYdHNvZnR3YXJlAGh0dHBzOi8vaW1hZ2VtYWdpY2sub3JnvM8dnQAAABh0RVh0VGh1bWI6OkRvY3VtZW50OjpQYWdlcwAxp/+7LwAAABh0RVh0VGh1bWI6OkltYWdlOjpIZWlnaHQAMTkyQF1xVQAAABd0RVh0VGh1bWI6OkltYWdlOjpXaWR0aAAxOTLTrCEIAAAAGXRFWHRUaHVtYjo6TWltZXR5cGUAaW1hZ2UvcG5nP7JWTgAAABd0RVh0VGh1bWI6Ok1UaW1lADE1OTQwODUwMDmu8H/JAAAAE3RFWHRUaHVtYjo6U2l6ZQAxMTMzOUJChIFZ/wAAAEJ0RVh0VGh1bWI6OlVSSQBmaWxlOi8vL3RtcC9pbWFnZWxjL2ltZ3ZpZXcyXzZfMTU5MjQ3OTgyMTE3NzIwNzRfNDhfWzBd1kwOkgAAAABJRU5ErkJggg==
 // @grant       GM_xmlhttpRequest
 // @grant       GM_registerMenuCommand
 // @grant       GM_unregisterMenuCommand
@@ -45,6 +49,10 @@ function registerMenuCommand() {
     for (let i = 0; i < menu_ID.length; i++) {
       GM_unregisterMenuCommand(menu_ID[i]);
     }
+  }
+  for (let i = 0; i < menu_ALL.length; i++) { // 循环注册脚本菜单
+    menu_ALL[i][3] = GM_getValue(menu_ALL[i][0]);
+    menu_ID[i] = GM_registerMenuCommand(`${menu_ALL[i][3] ? '✅' : '❌'} ${menu_ALL[i][1]}`, function () { menu_switch(`${menu_ALL[i][3]}`, `${menu_ALL[i][0]}`, `${menu_ALL[i][2]}`) });
   }
   menu_ID[menu_ID.length] = GM_registerMenuCommand('💬 反馈 & 建议', function () { window.GM_openInTab('https://github.com/lyndonliu89757/noPic', { active: true, insert: true, setParent: true }); window.GM_openInTab('https://greasyfork.org/zh-CN/scripts/473638/feedback', { active: true, insert: true, setParent: true }); });
 }
