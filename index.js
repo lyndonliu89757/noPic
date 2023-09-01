@@ -4,7 +4,7 @@
 // @name:en     No picture
 // @description 隐藏网站内的图片
 // @description:en Hide picture
-// @version     0.0.4
+// @version     0.0.5
 // @author      l.lyndon
 // @match       *://*.zhihu.com/*
 // @match       *://*.douban.com/*
@@ -20,7 +20,6 @@
 // @grant       GM_openInTab
 // @grant       GM_getValue
 // @grant       GM_setValue
-// @grant       GM_notification
 // @grant       GM_info
 // @grant       window.onurlchange
 // @grant       unsafeWindow
@@ -54,19 +53,21 @@ function registerMenuCommand() {
     menu_ALL[i][3] = GM_getValue(menu_ALL[i][0]);
     menu_ID[i] = GM_registerMenuCommand(`${menu_ALL[i][3] ? '✅' : '❌'} ${menu_ALL[i][1]}`, function () { menu_switch(`${menu_ALL[i][3]}`, `${menu_ALL[i][0]}`, `${menu_ALL[i][2]}`) });
   }
-  menu_ID[menu_ID.length] = GM_registerMenuCommand('💬 反馈 & 建议', function () { window.GM_openInTab('https://github.com/lyndonliu89757/noPic', { active: true, insert: true, setParent: true }); window.GM_openInTab('https://greasyfork.org/zh-CN/scripts/473638/feedback', { active: true, insert: true, setParent: true }); });
+  menu_ID[menu_ID.length] = GM_registerMenuCommand('💬 反馈 & 建议', function () {
+    window.GM_openInTab('https://github.com/lyndonliu89757/noPic', { active: true, insert: true, setParent: true });
+    window.GM_openInTab('https://greasyfork.org/zh-CN/scripts/473638/feedback', { active: true, insert: true, setParent: true });
+  });
 }
 
 // 菜单开关
 function menu_switch(menu_status, Name, Tips) {
   if (menu_status == 'true') {
     GM_setValue(`${Name}`, false);
-    GM_notification({ text: `已关闭 [${Tips}] 功能\n（点击刷新网页后生效）`, timeout: 3500, onclick: function () { location.reload(); } });
   } else {
     GM_setValue(`${Name}`, true);
-    GM_notification({ text: `已开启 [${Tips}] 功能\n（点击刷新网页后生效）`, timeout: 3500, onclick: function () { location.reload(); } });
   }
   registerMenuCommand(); // 重新注册脚本菜单
+  start();
 };
 
 
@@ -80,8 +81,8 @@ function menu_value(menuName) {
 }
 
 function changeElementDisplay() {
-  Array.from(document.getElementsByTagName('img')).map(i => i.style.display = menu_value('menu_hidePicture') ? 'none' : 'inline');
-  Array.from(document.getElementsByTagName('video')).map(i => i.style.display = menu_value('menu_hideVideo') ? 'none' : 'inline');
+  Array.from(document.getElementsByTagName('img')).forEach(i => i.style.display = menu_value('menu_hidePicture') ? 'none' : 'inline');
+  Array.from(document.getElementsByTagName('video')).forEach(i => i.style.display = menu_value('menu_hideVideo') ? 'none' : 'inline');
 }
 
 (function () {
