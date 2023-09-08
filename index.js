@@ -4,7 +4,7 @@
 // @name:en     No picture
 // @description 隐藏网站内的图片
 // @description:en Hide picture
-// @version     0.0.5
+// @version     0.0.6
 // @author      l.lyndon
 // @match       *://*.zhihu.com/*
 // @match       *://*.douban.com/*
@@ -61,13 +61,10 @@ function registerMenuCommand() {
 
 // 菜单开关
 function menu_switch(menu_status, Name, Tips) {
-  if (menu_status == 'true') {
-    GM_setValue(`${Name}`, false);
-  } else {
-    GM_setValue(`${Name}`, true);
-  }
+  const status = menu_status != 'true';
+  GM_setValue(`${Name}`, status);
   registerMenuCommand(); // 重新注册脚本菜单
-  start();
+  changeElementDisplay();
 };
 
 
